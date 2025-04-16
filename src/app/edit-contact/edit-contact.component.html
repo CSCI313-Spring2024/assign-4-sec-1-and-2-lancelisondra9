@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <h3>Edit Contact</h3>
+  
+    <form (ngSubmit)="saveContact()" #contactForm="ngForm" class="mt-3">
+      <div class="mb-3">
+        <label for="fName" class="form-label">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fName"
+          name="fName"
+          [(ngModel)]="contact.fName"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="lName" class="form-label">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lName"
+          name="lName"
+          [(ngModel)]="contact.lName"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phoneNumber"
+          name="phoneNumber"
+          [(ngModel)]="contact.phoneNumber"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="contact.email"
+        />
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">
+        Save
+      </button>
+      <button type="button" class="btn btn-secondary ms-2" (click)="router.navigate(['/'])">
+        Cancel
+      </button>
+    </form>
+  </div>
+  

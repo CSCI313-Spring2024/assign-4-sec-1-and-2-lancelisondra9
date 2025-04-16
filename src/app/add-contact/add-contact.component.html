@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <h4>Add New Contact</h4>
+  
+    <form (ngSubmit)="addContact()" #f="ngForm">
+      <div class="mb-2">
+        <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="newContact.fName" name="fName" required />
+      </div>
+      <div class="mb-2">
+        <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="newContact.lName" name="lName" required />
+      </div>
+      <div class="mb-2">
+        <input type="text" class="form-control" placeholder="Phone Number" [(ngModel)]="newContact.phoneNumber" name="phoneNumber" required />
+      </div>
+      <div class="mb-2">
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="newContact.email" name="email" />
+      </div>
+      <button class="btn btn-success" type="submit" [disabled]="!f.form.valid">Add Contact</button>
+    </form>
+  </div>
+  
